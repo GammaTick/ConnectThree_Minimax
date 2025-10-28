@@ -10,7 +10,7 @@ namespace Connect_Three
     {
         private readonly Board board;
         private readonly bool humanVsComputer;
-        private const int MAX_DEPTH = 4;
+        private const int MAX_DEPTH = 512;
 
         public Game(bool humanVsComputer)
         {
@@ -25,7 +25,11 @@ namespace Connect_Three
 
             while (!gameOver)
             {
-                if (currentPlayer == 'X')
+                if (!humanVsComputer)
+                {
+                    board.Display();
+                }
+                else if (currentPlayer == 'X')
                 { 
                     board.Display();
                 }

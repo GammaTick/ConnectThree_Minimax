@@ -31,7 +31,6 @@ namespace ConnectThree
                     break;
                 }
 
-                Console.Clear();
                 Console.WriteLine("Моля изберете валидна опция!");
             }
 

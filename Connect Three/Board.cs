@@ -21,8 +21,6 @@
 
         public void Display()
         {
-            Console.Clear();
-
             Console.WriteLine("\n  1 2 3 4");
             Console.WriteLine(" ─────────");
 
@@ -62,6 +60,9 @@
 
         public bool CheckWinner(char player)
         {
+            // Checks horizontally for 3 consecutive elements
+            // Example: X O O O X
+            // Here it detects the three O's in a row so it returns true
             for (int row = 0; row < ROWS; row++)
             {
                 for (int col = 0; col <= COLS - 3; col++)
@@ -75,6 +76,12 @@
                 }
             }
 
+            // Checks vertically for 3 consecutive elements
+            // Example:
+            // O . . .
+            // O X . .
+            // O X . .
+            // Here it detects the three O's in the column so it returns true
             for (int col = 0; col < COLS; col++)
             {
                 for (int row = 0; row <= ROWS - 3; row++)
@@ -88,6 +95,9 @@
                 }
             }
 
+
+            // Checks diagonally for 3 consecutive elements
+            // ↘️ (Top-left → Bottom-right)
             for (int row = 0; row <= ROWS - 3; row++)
             {
                 for (int col = 0; col <= COLS - 3; col++)
@@ -101,6 +111,8 @@
                 }
             }
 
+            // Checks diagonally for 3 consecutive elements
+            // ↗️ (Bottom-left → Top-right)
             for (int row = 2; row < ROWS; row++)
             {
                 for (int col = 0; col <= COLS - 3; col++)
